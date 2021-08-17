@@ -6,7 +6,7 @@
 
   
     $usu = $_POST['usuario'];
-    $pss = $_POST['password'];
+    $pass = $_POST['password'];
     $cor = $_POST['correo'];
 /*
 $usu = "Javier";
