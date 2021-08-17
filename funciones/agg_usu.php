@@ -3,16 +3,22 @@
         require_once '../config/clase_sql.php';
     $clase_par = new Clase_sql();
 
-   
-    /*$usu = $_POST['usuario'];
+
+  
+    $usu = $_POST['usuario'];
     $pss = $_POST['password'];
-    $cor = $_POST['correo'];*/
-    $usu = "Carlos";
-    $pass = "123456";
-    $cor = "Carlos@outlook.es";
+    $cor = $_POST['correo'];
+/*
+$usu = "Javier";
+$pass = "123456789";
+$cor ="Javiersacancela@gmail.com";*/
+$result = $clase_par-> InsertarUsuario($usu,$pass,$cor);
 
+if ($result==true){
+    echo "se guardo";
 
-
-    $result = $clase_par-> InsertarUsuario($usu,$pass,$cor);
+}else{
+    echo "nose pudo  mi so";
+}
 
 ?>

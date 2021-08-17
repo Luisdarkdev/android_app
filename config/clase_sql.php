@@ -31,7 +31,7 @@
         public function ConsultaEditUsuario($cod){
             $resultado = $this->bd->query("SELECT * FROM usuario WHERE  COD_USE = '$cod'");
             return $resultado;
-      
+        }
         # Funcion para Actualizar Usuario
         public function ActualizarUsuario($cod,$usu,$pass,$cor){
             $resultado = $this->bd->query("UPDATE usuario set NOM_USE='$usu', PASS_USE='$pass', COR_USE='$cor' WHERE COD_USE = $cod");
@@ -41,8 +41,12 @@
         public function ConsultaCategoriaGeneral(){
             # Consultas Sql
             # query "es la consulta" ("consulta sql")
-            $resultado = $this->bd->query("SELECT * FROM categoria");
+            $resultado = $this->bd->query("SELECT * FROM categorias");
             return $resultado;
         }
-
+         # Funcion para Insertar Producto
+         public function InsertarProducto($usuario, $categoria, $titulo, $nombre, $descripcion, $actualpath, $presio){
+            $resultado = $this->bd->query("INSERT INTO  producto ( COD_USE, COD_CAT, TIT_PRO, NOM_PRO, DESC_PRO, IMA_PRO, PRE_PRO) VALUES ('$usuario', '$categoria', '$titulo', '$nombre', '$descripcion', '$actualpath', '$presio')");
+            return true;
+            }
 }
